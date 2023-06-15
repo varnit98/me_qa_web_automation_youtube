@@ -1,0 +1,23 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "gradle",
+			"id": "/home/kiran/Documents/Crio/qa_trial_selenium_demorunredbus-selenium",
+			"script": "run",
+			"description": "Runs this project as a JVM application",
+			"group": "application",
+			"project": "redbus-selenium",
+			"buildFile": "/home/kiran/Documents/Crio/qa_trial_selenium_demo/build.gradle",
+			"rootProject": "redbus-selenium",
+			"projectFolder": "/home/kiran/Documents/Crio/qa_trial_selenium_demo",
+			"workspaceFolder": "/home/kiran/Documents/Crio/qa_trial_selenium_demo",
+			"args": "",
+			"javaDebug": true,
+			"problemMatcher": [
+				"$gradle"
+			],
+			"label": "gradle: run"
+		}
+	]
+}
