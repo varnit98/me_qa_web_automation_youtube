@@ -18,11 +18,8 @@ public class FindTopThree {
 
   public static void runYoutubeTest() throws InterruptedException, MalformedURLException {
 	  
-	  
-	  
     //Starting Point of Execution
     System.out.println("Entering main()");
-
     
     //Set item name here
     String searchWord = "movies";
@@ -32,7 +29,6 @@ public class FindTopThree {
     capabilities.setBrowserName(BrowserType.CHROME);
     RemoteWebDriver driver = new RemoteWebDriver(new URL("http://localhost:8082/wd/hub"), capabilities);
     
-
     //Maximize and Implicit Wait for things to initialize
     driver.manage().window().maximize();
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -40,18 +36,18 @@ public class FindTopThree {
     //Launch the URL and maximize
     driver.get("https://www.youtube.com");
 
-    // Wait 4 seconds for site to get loaded
-    Thread.sleep(4000);
+    // Wait 5 seconds for site to get loaded
+    Thread.sleep(5000);
 
     // Find the element where Search Word is to be entered, 
     // populate the search bar
     driver.findElement(By.xpath("//input[@name='search_query']")).clear();
     driver.findElement(By.xpath("//input[@name='search_query']")).sendKeys(searchWord);
-    Thread.sleep(2000);
+    Thread.sleep(3000);
     driver.findElement(By.xpath("(//button[@aria-label='Search'])[1]")).click();
 
-    // Wait 2 seconds
-    Thread.sleep(2000);
+    // Wait 5 seconds
+    Thread.sleep(5000);
     
     //Print the first element card (title, price, latest delivery time, etc)
     String videoOne = driver.findElement(By.xpath("(//a[@id='video-title'])[1]")).getText();
@@ -61,6 +57,9 @@ public class FindTopThree {
     System.out.println("-------------------------------------------------\n\n");
     System.out.println("The first 3 "+searchWord+" videos available are: \n 1. "+videoOne+"\n 2. "+videoTwo+"\n 3. "+videoThree);
     System.out.println("-------------------------------------------------\n\n");
+
+    // Wait 5 seconds
+    Thread.sleep(5000);
 
     //Close and quit the driver
     driver.close();
